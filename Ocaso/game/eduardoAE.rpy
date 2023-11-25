@@ -3,7 +3,8 @@ label eduardoLine:
     "Siguiendo tus instintos, curiosidad y falta de sentido común, finalmente alcanzas a Eduardo"
     show isa_bite with moveinbottom 
     "La luz se filtra entre los árboles, proyectando un brillo etéreo."
-    hide isa_bite with fade
+    pause 1.0 
+    hide isa_bite with dissolve
     show angry_e with moveinbottom
     "Eduardo te voltea a ver, su expresión es una mezcla de frustración y resignación."
     eduardo "¿Por qué me sigues, Isabella? ¿No te das cuenta de lo peligroso que soy?"
@@ -20,6 +21,14 @@ label eduardoLine:
             eduardo "Dilo, en voz alta. ¡Dilo!"
             jump vampiro
 
+        "Finge ignorancia y vete":
+            isabella "Esto se está poniendo muy extraño. Estoy incómoda, no entiendo nada y no quiero entender. Adiós."
+            eduardo "a"
+            "Al darte cuenta del peligro potencial y lo absurdo de la situación, decides alejarte."
+            show house with fade
+            "Regresas a la seguridad de tu casa, con tu mente echando punta con las extrañas revelaciones del día."
+            jump finalChoice
+
 
 label vampiro:
     menu:
@@ -29,11 +38,17 @@ label vampiro:
             isabella "Un vampiro. Y, sinceramente, eso es genial. ¿Brillas todo el tiempo o sólo bajo la luz del sol?"
             eduardo "Sí, soy un vampiro. Y esta ..." 
             eduardo "... esta es la piel de un asesino"
+            pause 2.0  
             jump secondChance
 
         "Hmmm no no nop corre":
             isabella "¿Sabes qué? Esto es demasiado extraño para mí. No me gusta salir con criaturas míticas potencialmente peligrosas. Debería irme"
             eduardo "Entiendo. Probablemente sea lo mejor. Ten cuidado, Isabella"
+
+            "Al darte cuenta del peligro potencial y lo absurdo de la situación, decides alejarte."
+            show house with fade
+            "Regresas a la seguridad de tu casa, con tu mente echando punta con las extrañas revelaciones del día."
+            jump finalChoice
 
         "Anemia":
             isabella "Tienes anemia. No juzgo, yo también."
@@ -42,7 +57,7 @@ label vampiro:
             eduardo "No, Isabella, no soy anímico. Soy un vampiro. Y esta ..."
             hide ferridoce with moveoutbottom
             eduardo "... esta es la piel de un asesino"
-
+            pause 2.0  
             jump secondChance
 
 label secondChance:
@@ -52,7 +67,7 @@ label secondChance:
             isabella "Aaa okay, esto puede funcionar para mí."
             hide shinny_e with moveoutbottom
             # ed carga a bella
-            show running with moveinright
+            show running with slideleft
             "Eduardo te carga y pasan por el bosque de una manera como nunca habías experimentado."
             "Estás aterrada y a la vez emocionada de ver qué más puede hacer tu novio vampiro."
 
@@ -74,8 +89,9 @@ label eduardoEnding:
     scene wedding_venue with fade
     show married with moveinbottom
     "Después de mucho involucrando vampiros locos y hombres lobo, finalmente, Eduardo y tú se casan y tienen una hermosa boda." 
-    hide married with moveoutbottom
     "Poco después de su luna de miel, y sí literalmente como 3 días desde su luna de miel, quedaste embarazada de un bebé medio vampiro que te está comiendo por dentro."
+    hide married with moveoutbottom
+
     scene forest3 with fade
     show pregnant at right with moveinbottom
     "Después de 2 semanas embarazada, el bebe demonio decide destruirte y salir a aterrorizar a todo quien lo vea."
